@@ -1,6 +1,23 @@
 {
     "tasks": [
         {
+            "label": "Build Main",
+            "type": "shell",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-std=c++11",
+                "-g", // Allow debugging
+                "${workspaceFolder}/main.cpp",
+                "-o",
+                "${workspaceFolder}/main",
+            ],
+            "group": "build",
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "Build the main executable"
+        },
+        {
             "type": "cppbuild",
             "label": "C/C++: g++.exe build active file",
             "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
