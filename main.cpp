@@ -110,8 +110,8 @@ void runTests(StringBinaryTree &tree)
         cout << "Search failed" << endl;
     }
 
-    cout << "Modify node";
+    cout << "Modify node" << endl;
     // 2nd to last item, but it's modified to have a value that should be last.
-    tree.modifyNode("zzrufvqX", "zzzzzzzz");
+    tree.modifyNode("zzrufvqX", "zzzzzzzzzzzzzz");
     tree.displayInOrder();
 }

@@ -61,19 +61,17 @@ bool StringBinaryTree::searchNode(string num) {
 
 bool StringBinaryTree::modifyNode(string num, string replacement)
 {
-   // copy from search
-   TreeNode *nodePtr = root;
-      while (nodePtr)    {
-      if (nodePtr->value == num) {
-         nodePtr->value = replacement;
-         return true;
-      }
-      else if (num < nodePtr->value)
-         nodePtr = nodePtr->left;
-      else
-         nodePtr = nodePtr->right;
+   // Search node, if not found, return false
+   if (!searchNode(num)) {
+      cout << "node not found";
+      return false;
    }
-    return false;
+   cout << "Removing node " << num << endl;
+   // Delete the node if it exists
+   remove(num);
+   // Create a new node, which will ensure the sorting works
+   insertNode(replacement);
+    return true;
 }
 
 // remove calls deleteNode to delete the      
