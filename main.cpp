@@ -7,6 +7,10 @@
 using namespace std;
 
 int main() {
-    
+    // create a StringBinaryTree object
+    StringBinaryTree tree;
+    // insert some values
+    tree.insertNode("George");
+
     return 0;
 }

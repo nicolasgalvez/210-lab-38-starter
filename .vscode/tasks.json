@@ -7,7 +7,7 @@
             "args": [
                 "-std=c++11",
                 "-g", // Allow debugging
-                "${workspaceFolder}/main.cpp",
+                "${workspaceFolder}/*.cpp",
                 "-o",
                 "${workspaceFolder}/main",
             ],
@@ -15,6 +15,11 @@
             "problemMatcher": [
                 "$gcc"
             ],
+            "osx": {
+                "options": {
+                    "cwd": "${workspaceFolder}"
+                }
+            },
             "detail": "Build the main executable"
         },
         {
