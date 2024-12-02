@@ -27,6 +27,7 @@ int main()
         cout << "1. Add a code" << endl;
         cout << "2. Delete a code" << endl;
         cout << "3. Search for a code" << endl;
+        cout << "4. Modify a code";
         // cout << "9. Run tests" << endl;
         cout << "0. Exit" << endl;
         cout << "Enter your choice: ";
@@ -65,6 +66,10 @@ int main()
             }
             break;
         }
+        case 4:
+            tree.modifyNode("XZYwXoDE", "asdfasdf");
+            break;
+        
         // case 4:
         //     tree.displayInOrder();
         //     break;
@@ -98,7 +103,7 @@ void loadCodes(StringBinaryTree &tree)
 }
 void runTests(StringBinaryTree &tree)
 {
-    cout <<"Running Tests";
+    cout <<"Running Tests" << endl << endl;
     if (tree.searchNode("XZYwXoDE")) {
         cout << "Found XZYwXoDE" << endl;
     }else {

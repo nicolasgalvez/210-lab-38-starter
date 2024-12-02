@@ -59,6 +59,23 @@ bool StringBinaryTree::searchNode(string num) {
    return false;
 }
 
+bool StringBinaryTree::modifyNode(string num, string replacement)
+{
+   // copy from search
+   TreeNode *nodePtr = root;
+      while (nodePtr)    {
+      if (nodePtr->value == num) {
+         nodePtr->value = replacement;
+         return true;
+      }
+      else if (num < nodePtr->value)
+         nodePtr = nodePtr->left;
+      else
+         nodePtr = nodePtr->right;
+   }
+    return false;
+}
+
 // remove calls deleteNode to delete the      
 // node whose value member is the same as num.
 void StringBinaryTree::remove(string num) {
