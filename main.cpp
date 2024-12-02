@@ -28,6 +28,7 @@ int main()
         cout << "2. Delete a code" << endl;
         cout << "3. Search for a code" << endl;
         cout << "4. Modify a code";
+        cout << "5. List code";
         // cout << "9. Run tests" << endl;
         cout << "0. Exit" << endl;
         cout << "Enter your choice: ";
@@ -67,12 +68,11 @@ int main()
             break;
         }
         case 4:
-            tree.modifyNode("XZYwXoDE", "asdfasdf");
+            tree.modifyNode("zzrufvqX", "zzzzzzzz");
+            break;  
+        case 5:
+            tree.displayInOrder();
             break;
-        
-        // case 4:
-        //     tree.displayInOrder();
-        //     break;
         case 0:
             break;
         default:
@@ -109,4 +109,9 @@ void runTests(StringBinaryTree &tree)
     }else {
         cout << "Search failed" << endl;
     }
+
+    cout << "Modify node";
+    // 2nd to last item, but it's modified to have a value that should be last.
+    tree.modifyNode("zzrufvqX", "zzzzzzzz");
+    tree.displayInOrder();
 }
