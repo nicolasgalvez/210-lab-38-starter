@@ -27,8 +27,8 @@ int main()
         cout << "1. Add a code" << endl;
         cout << "2. Delete a code" << endl;
         cout << "3. Search for a code" << endl;
-        cout << "4. Modify a code";
-        cout << "5. List code";
+        cout << "4. Modify a code" << endl;
+        cout << "5. List codes" << endl;
         // cout << "9. Run tests" << endl;
         cout << "0. Exit" << endl;
         cout << "Enter your choice: ";
@@ -68,8 +68,22 @@ int main()
             break;
         }
         case 4:
-            tree.modifyNode("zzrufvqX", "zzzzzzzz");
-            break;  
+        {
+            string code, replacement;
+            cout << "Enter a code to search for: ";
+            getline(cin, code);
+            cout << "Enter a replacement: ";
+            getline(cin, replacement);
+            if (tree.modifyNode(code, replacement))
+            {
+                cout << "Code replaced." << endl;
+            }
+            else
+            {
+                cout << "Code not replaced." << endl;
+            }
+            break;
+        }
         case 5:
             tree.displayInOrder();
             break;
@@ -78,7 +92,7 @@ int main()
         default:
             cout << "Invalid choice." << endl;
         }
-    } while (choice !=0);
+    } while (choice != 0);
 
     return 0;
 }
@@ -103,10 +117,14 @@ void loadCodes(StringBinaryTree &tree)
 }
 void runTests(StringBinaryTree &tree)
 {
-    cout <<"Running Tests" << endl << endl;
-    if (tree.searchNode("XZYwXoDE")) {
+    cout << "Running Tests" << endl
+         << endl;
+    if (tree.searchNode("XZYwXoDE"))
+    {
         cout << "Found XZYwXoDE" << endl;
-    }else {
+    }
+    else
+    {
         cout << "Search failed" << endl;
     }
 

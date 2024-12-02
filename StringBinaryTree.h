@@ -3,17 +3,19 @@
 #define StringBinaryTree_H
 
 // The StringBinaryTree class manages a binary tree of integers.
-class StringBinaryTree {
+class StringBinaryTree
+{
 private:
    // TreeNode is a private structure for StringBinaryTree nodes.
-   struct TreeNode {
-      std::string value;         // The value in the node
+   struct TreeNode
+   {
+      std::string value; // The value in the node
       TreeNode *left;    // Pointer to left child node
       TreeNode *right;   // Pointer to right child node
    };
 
    // root points to the topmost node of the tree.
-   TreeNode *root;      
+   TreeNode *root;
 
    // Private member functions for internal operations.
    void insert(TreeNode *&, TreeNode *&);
@@ -26,10 +28,10 @@ private:
 
 public:
    // Constructor initializes the root to nullptr, indicating an empty tree.
-   StringBinaryTree()     { root = nullptr; }
+   StringBinaryTree() { root = nullptr; }
 
    // Destructor deallocates all nodes in the tree.
-   ~StringBinaryTree()    { destroySubTree(root); }
+   ~StringBinaryTree() { destroySubTree(root); }
 
    // Public interface for inserting, searching, and removing nodes.
    void insertNode(std::string);
@@ -38,9 +40,9 @@ public:
    void remove(std::string);
 
    // Public wrappers for tree traversal functions.
-   void displayInOrder() const     {  displayInOrder(root); }
-   void displayPreOrder() const    {  displayPreOrder(root); }
-   void displayPostOrder() const   {  displayPostOrder(root); }
+   void displayInOrder() const { displayInOrder(root); }
+   void displayPreOrder() const { displayPreOrder(root); }
+   void displayPostOrder() const { displayPostOrder(root); }
 };
 
 #endif // StringBinaryTree_H
